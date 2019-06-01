@@ -26,6 +26,50 @@ Install `node-red-contrib-opcua` from "Manage palette"
 <img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-server.png" width="700px"/>
 </p>
 
+**104-opcuaserver.js**
+
+```
+           addressSpace.getOwnNamespace().addVariable({
+                componentOf: vendorName,
+                nodeId: "ns=1;s=Temperature",
+                browseName: "Temperature",
+                dataType: "UInt16",
+
+                value: {
+                    get: function () {
+                        return new opcua.Variant({
+                            dataType: opcua.DataType.UInt16,
+                            value: Temperature
+                        });
+                    },
+                    set: function (variant) {
+                        Temperature = opcuaBasics.build_new_value_by_datatype(variant.dataType, variant.value);
+                        return opcua.StatusCodes.Good;
+                    }
+                }
+            });
+
+            addressSpace.getOwnNamespace().addVariable({
+                componentOf: vendorName,
+                nodeId: "ns=1;s=Fan1Status",
+                browseName: "Fan1Status",
+                dataType: "UInt16",
+
+                value: {
+                    get: function () {
+                        return new opcua.Variant({
+                            dataType: opcua.DataType.UInt16,
+                            value: Fan1Status
+                        });
+                    },
+                    set: function (variant) {
+                        Fan1Status = opcuaBasics.build_new_value_by_datatype(variant.dataType, variant.value);
+                        return opcua.StatusCodes.Good;
+                    }
+                }
+            });
+            // Same for ns=1;s=Fan2Status, ns=1;s=Fan3Status
+```
 ## OPC UA Agent/Client
 
 Install `node-red-contrib-opcua` from "Manage palette"
@@ -42,20 +86,26 @@ Install `node-red-contrib-opcua` from "Manage palette"
 
 ## Visualization
 
-- Install `node-red-contrib-influxdb` from "Managae palette"
-- Install InfluxDB
-> brew install  influxdb
-- Install Grafana
-> brew install grafana
+<p align="center">
+<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-grafana-dashboard.gif" width="700px"/>
+</p>
 
-- Start Services
+1. Install `node-red-contrib-influxdb` from "Managae palette"
+2. Install InfluxDB
+> brew install  influxdb
+3. Install Grafana
+> brew install grafana
+4. Start Services
 > brew tap homebrew/services
 > brew services start influxdb
 > brew services start grafana
 
 The following data were added to `temperature` measurement. 
 
-> insert temperature, region=east_1,host=IP address  value=89
+<p align="left">
+<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/influxdb_measurement.png" width="500px"/>
+</p>
+
 
 Conceptually you can think of a measurement as an SQL table, where the primary index is always time.tags and fields are effectively columns in the table. tags are indexed, and fields are not.
 
