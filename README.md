@@ -15,7 +15,7 @@ Make the manufacturuing data available so that it can be visialized and trigger 
 
 ## OPC UA Demo
 
-In order to keep the temperature under control, at least two fans should be functional. Otherwise, the temperature will go up and OPC UA agent sends an alert message and wait for the next action (e.g., turn on the backup unit) 
+In order to keep the temperature under control, at least two fans should be functional. Otherwise, the temperature goes up gradually (max 100). OPC UA agent sends an alert message at a certain level (re-sends if the temperature is still high after timeout) and waits for the next action (e.g., turn on the backup unit) 
 
 <p align="center">
 <img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-fan-simulation.gif" width="700px"/>
