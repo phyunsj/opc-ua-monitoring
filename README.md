@@ -5,10 +5,6 @@
 
 ## Overview
 
-<p align="center">
-<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-fan-simulation.gif" width="600px"/>
-</p>
-
 Make the manufacturuing data available so that it can be visialized and trigger alerts. Read tag values from OPC-HA and also write values to OPC HA.
 
 1. OPC HA Server - Node-RED OPCUA Server
@@ -18,12 +14,16 @@ Presumely it will be deployed to access the local network to interact with OPC U
 Critical information should be delivered for an immediate attention
 4. Visualization - InfluxDB & Grafana
 
+<p align="center">
+<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-fan-simulation.gif" width="700px"/>
+</p>
+
 ## OPC HA Server
 
 Install `node-red-contrib-opcua` from "Manage palette"
 
 <p align="center">
-<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-server.png" width="600px"/>
+<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-server.png" width="700px"/>
 </p>
 
 ## OPC HA Agent/Client
@@ -31,12 +31,14 @@ Install `node-red-contrib-opcua` from "Manage palette"
 Install `node-red-contrib-opcua` from "Manage palette"
 
 <p align="center">
-<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-agent.png" width="600px"/>
+<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-agent.png" width="700px"/>
 </p>
 
 ## Remote Monitor and Control : Blynk 
 
-TBD
+<p align="center">
+<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-remote-fan-monitor.gif" width="300px"/>
+</p>
 
 ## Visualization
 
