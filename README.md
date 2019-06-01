@@ -5,15 +5,13 @@
 
 ## Overview
 
-Make the manufacturuing data available so that it can be visialized and trigger alerts. Read tag values from OPC UA Server and also write values to OPC UA Server.
+Make the manufacturuing data available so that it can be visialized and trigger alerts. 
 
 1. OPC UA Demo
-2. OPC UA Server - Node-RED OPCUA Server
-3. OPC UA Agent/Client - Node-RED OPCUA Client  
-Presumely it will be deployed to access the local network to interact with OPC UA Server(s)
-4. Remote Monitor - Blynk
-Critical information should be delivered for an immediate attention
-5. Visualization - InfluxDB & Grafana
+2. OPC UA Server 
+3. OPC UA Agent/Client :  Presumely it will be deployed on the local network to interact with OPC UA Server(s)
+4. Remote Monitor :  Critical information should be delivered for an immediate attention
+5. Visualization 
 
 ## OPC UA Demo
 
@@ -27,14 +25,13 @@ In order to keep the temperature under control, at least two fans should be func
 1. OPC UA Agent monitors **Temperature** and 3 **Fan**s.
 2. Disable Fan #1 from OPC UA Server. (simulating hardware malfunction)
 3. Send an alert message.
-4. Turn on the backup unit (Fan #3). Auto-Remediation should be triggered in real world. 
-
+4. Turn on the backup unit (Fan #3). **Auto-remediation** should be triggered in real world. 
 
 ## OPC UA Server
 
 Install `node-red-contrib-opcua` from "Manage palette"
 
-**104-opcuaserver.js** : 4 variables are added. 
+**104-opcuaserver.js** : 4 variables are added for this demo.
 
 ```
            addressSpace.getOwnNamespace().addVariable({
@@ -102,7 +99,7 @@ Install `node-red-contrib-opcua` from "Manage palette"
 | Virtual Pin 2  | ns=1;s=Fan2Status  |
 | Virtual Pin 3  | ns=1;s=Fan3Status  ||
 
-Only Virtual Pin 3 is writable. 
+Only Virtual Pin 3 is writable for this demo.
 
 ## Visualization
 
