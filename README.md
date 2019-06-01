@@ -6,7 +6,7 @@
 ## Overview
 
 <p align="center">
-<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-fan-simulation.gif" width="300px"/>
+<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-fan-simulation.gif" width="600px"/>
 </p>
 
 Make the manufacturuing data available so that it can be visialized and trigger alerts. Read tag values from OPC-HA and also write values to OPC HA.
@@ -23,7 +23,7 @@ Critical information should be delivered for an immediate attention
 Install `node-red-contrib-opcua` from "Manage palette"
 
 <p align="center">
-<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-server.png" width="300px"/>
+<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-server.png" width="600px"/>
 </p>
 
 ## OPC HA Agent/Client
@@ -31,7 +31,7 @@ Install `node-red-contrib-opcua` from "Manage palette"
 Install `node-red-contrib-opcua` from "Manage palette"
 
 <p align="center">
-<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-agent.png" width="300px"/>
+<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-agent.png" width="600px"/>
 </p>
 
 ## Remote Monitor and Control : Blynk 
