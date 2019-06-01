@@ -96,20 +96,44 @@ Install `node-red-contrib-opcua` from "Manage palette"
 3. Install Grafana
 > brew install grafana
 4. Start Services
-> brew tap homebrew/services
-> brew services start influxdb
-> brew services start grafana
+> brew services start influxdb grafana /* brew tap homebrew/services if necessary */
 
 The following data were added to `temperature` measurement. 
 
 <p align="left">
-<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/influxdb_measurement.png" width="500px"/>
+<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/influxdb_measurement.png" width="400px"/>
 </p>
 
 
 Conceptually you can think of a measurement as an SQL table, where the primary index is always time.tags and fields are effectively columns in the table. tags are indexed, and fields are not.
 
-Created multiple regions to visualize the regional data. Only `east_[2|3|4|5|6]` were simulated from OPC UA Agent. 
+Created multiple regions to visualize the regional data. `east_[2|3|4|5|6]` were also simulated. The following `msg.payload` was sent to `influxdb batch` node.
+
+```
+return  { payload : [
+          {
+                      measurement: "temperature",
+                      fields: {
+                                 temp: value - value2
+                      },
+                      tags:{
+                                 region: "east-2",
+                                 ipaddr: "192.123.22.34"
+                      }
+         },
+         {
+                      measurement: "temperature",
+                      fields: {
+                                  temp: value + value2
+                      },
+                      tags:{
+                                 region: "east-3",
+                                 ipaddr: "192.123.23.34"
+                      }
+         },
+         ...
+         ]       
+```
 
 
 #### Related Links
