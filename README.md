@@ -92,7 +92,7 @@ Install `node-red-contrib-opcua` from "Manage palette"
 
 [Blynk](https://blynk.io/) lets you connect your devices to the cloud, design apps to control them, analyze telemetry data, and manage your deployed products at scale. 
 
-| Blynk         | OPC UA Variable | 
+| Blynk  Pin    | OPC UA Variable | 
 | ------------- | ------------- |
 | Virtual Pin 0  | ns=1;s=Temperature |
 | Virtual Pin 1  | ns=1;s=Fan1Status  |
@@ -109,13 +109,13 @@ Only Virtual Pin 3 is writable for this demo.
 
 1. Install `node-red-contrib-influxdb` from "Managae palette"
 2. Install InfluxDB
-> brew install  influxdb
+>`$ brew install  influxdb`
 3. Install Grafana
-> brew install grafana
-4. Start Services
-> brew services start influxdb grafana /* brew tap homebrew/services if necessary */
+>`$ brew install grafana`
+4. Start Services ( `$ brew tap homebrew/services` if necessary ) 
+>`$ brew services start influxdb grafana` 
 
-The following data were added to `temperature` measurement. 
+The following data were added to `temperature` measurement. Use `drop measurement <measurement-name>` to delete.
 
 <p align="left">
 <img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/influxdb_measurement.png" width="400px"/>
