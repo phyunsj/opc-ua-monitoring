@@ -7,8 +7,8 @@
 
 Make the manufacturuing data available so that it can be visialized and trigger alerts. Read tag values from OPC-HA and also write values to OPC HA.
 
-1. OPC HA Server - Node-RED OPCUA Server
-2. OPC HA Agent/Client - Node-RED OPCUA Client  
+1. OPC UA Server - Node-RED OPCUA Server
+2. OPC UA Agent/Client - Node-RED OPCUA Client  
 Presumely it will be deployed to access the local network to interact with OPC UA Server(s)
 3. Remote Monitor - Blynk
 Critical information should be delivered for an immediate attention
@@ -18,7 +18,7 @@ Critical information should be delivered for an immediate attention
 <img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-fan-simulation.gif" width="700px"/>
 </p>
 
-## OPC HA Server
+## OPC UA Server
 
 Install `node-red-contrib-opcua` from "Manage palette"
 
@@ -26,7 +26,7 @@ Install `node-red-contrib-opcua` from "Manage palette"
 <img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-server.png" width="700px"/>
 </p>
 
-## OPC HA Agent/Client
+## OPC UA Agent/Client
 
 Install `node-red-contrib-opcua` from "Manage palette"
 
@@ -53,14 +53,13 @@ Install `node-red-contrib-opcua` from "Manage palette"
 > brew services start influxdb
 > brew services start grafana
 
-For OPA-HA demo, the following data were added to `temperature` measurement. 
+The following data were added to `temperature` measurement. 
 
 > insert temperature, region=east_1,host=IP address  value=89
 
 Conceptually you can think of a measurement as an SQL table, where the primary index is always time.tags and fields are effectively columns in the table. tags are indexed, and fields are not.
 
 Created multiple regions to visualize the regional data. Only `east_[2|3|4|5|6]` were simulated from OPC UA Agent. 
-
 
 
 #### Related Links
