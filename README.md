@@ -1,5 +1,5 @@
 
-# OPC HA Remote Monitoring
+# OPC UA Remote Monitoring
 
 **OPC Unified Architecture (OPC UA)** is a machine to machine communication protocol for industrial automation developed by the OPC Foundation. Distinguishing characteristics are: Focus on communicating with industrial equipment and systems for data collection and control. _...[OPC Unified Architecture - Wiki](https://en.wikipedia.org/wiki/OPC_Unified_Architecture)_
 
