@@ -7,26 +7,34 @@
 
 Make the manufacturuing data available so that it can be visialized and trigger alerts. Read tag values from OPC UA Server and also write values to OPC UA Server.
 
-1. OPC UA Server - Node-RED OPCUA Server
-2. OPC UA Agent/Client - Node-RED OPCUA Client  
+1. OPC UA Demo
+2. OPC UA Server - Node-RED OPCUA Server
+3. OPC UA Agent/Client - Node-RED OPCUA Client  
 Presumely it will be deployed to access the local network to interact with OPC UA Server(s)
-3. Remote Monitor - Blynk
+4. Remote Monitor - Blynk
 Critical information should be delivered for an immediate attention
-4. Visualization - InfluxDB & Grafana
+5. Visualization - InfluxDB & Grafana
+
+## OPC UA Demo
+
+In order to keep the temperature under control, at least two fans should be functional. Otherwise, the temperature will go up and OPC UA agent sends an alert message and wait for the next action (e.g., turn on the backup unit) 
 
 <p align="center">
 <img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-fan-simulation.gif" width="700px"/>
+<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-remote-fan-monitor.gif" width="300px"/>
 </p>
+
+1. OPC UA Agent monitors **Temperature** and 3 **Fan**s.
+2. Disable Fan #1 from OPC UA Server. (simulating hardware malfunction)
+3. Send an alert message.
+4. Turn on the backup unit (Fan #3). Auto-Remediation should be triggered in real world. 
+
 
 ## OPC UA Server
 
 Install `node-red-contrib-opcua` from "Manage palette"
 
-<p align="center">
-<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-server.png" width="700px"/>
-</p>
-
-**104-opcuaserver.js**
+**104-opcuaserver.js** : 4 variables are added. 
 
 ```
            addressSpace.getOwnNamespace().addVariable({
@@ -70,6 +78,11 @@ Install `node-red-contrib-opcua` from "Manage palette"
             });
             // Same for ns=1;s=Fan2Status, ns=1;s=Fan3Status
 ```
+
+<p align="center">
+<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-server.png" width="700px"/>
+</p>
+
 ## OPC UA Agent/Client
 
 Install `node-red-contrib-opcua` from "Manage palette"
@@ -78,11 +91,18 @@ Install `node-red-contrib-opcua` from "Manage palette"
 <img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-agent.png" width="700px"/>
 </p>
 
-## Remote Monitor and Control : Blynk 
+## Remote Monitor and Control
 
-<p align="center">
-<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-remote-fan-monitor.gif" width="300px"/>
-</p>
+[Blynk](https://blynk.io/) lets you connect your devices to the cloud, design apps to control them, analyze telemetry data, and manage your deployed products at scale. 
+
+| Blynk         | OPC UA Variable | 
+| ------------- | ------------- |
+| Virtual Pin 0  | ns=1;s=Temperature |
+| Virtual Pin 1  | ns=1;s=Fan1Status  |
+| Virtual Pin 2  | ns=1;s=Fan2Status  |
+| Virtual Pin 3  | ns=1;s=Fan3Status  ||
+
+Only Virtual Pin 3 is writable. 
 
 ## Visualization
 
