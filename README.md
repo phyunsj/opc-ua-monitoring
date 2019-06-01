@@ -5,7 +5,7 @@
 
 ## Overview
 
-Make the manufacturuing data available so that it can be visialized and trigger alerts. Read tag values from OPC-HA and also write values to OPC HA.
+Make the manufacturuing data available so that it can be visialized and trigger alerts. Read tag values from OPC UA Server and also write values to OPC UA Server.
 
 1. OPC UA Server - Node-RED OPCUA Server
 2. OPC UA Agent/Client - Node-RED OPCUA Client  
