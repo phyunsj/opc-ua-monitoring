@@ -92,12 +92,12 @@ Install `node-red-contrib-opcua` from "Manage palette"
 
 [Blynk](https://blynk.io/) lets you connect your devices to the cloud, design apps to control them, analyze telemetry data, and manage your deployed products at scale. 
 
-| Blynk  Pin    | OPC UA Variable | 
-| ------------- | ------------- |
-| Virtual Pin 0  | ns=1;s=Temperature |
-| Virtual Pin 1  | ns=1;s=Fan1Status  |
-| Virtual Pin 2  | ns=1;s=Fan2Status  |
-| Virtual Pin 3  | ns=1;s=Fan3Status  ||
+| Blynk Widget | Blynk  Pin    | OPC UA Variable | 
+| --|------------- | ------------- |
+| SuperChart|Virtual Pin 0  | ns=1;s=Temperature |
+| Button(Switch)|Virtual Pin 1  | ns=1;s=Fan1Status  |
+| Button(Switch)|Virtual Pin 2  | ns=1;s=Fan2Status  |
+| Button(Switch)|Virtual Pin 3  | ns=1;s=Fan3Status  ||
 
 Only Virtual Pin 3 is writable for this demo.
 
