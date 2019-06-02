@@ -101,6 +101,10 @@ Install `node-red-contrib-opcua` from "Manage palette"
 
 Only Virtual Pin 3 is writable for this demo.
 
+<p align="center">
+<img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/blynk-settings.gif" width="300px"/>
+</p>
+
 ## Visualization
 
 <p align="center">
