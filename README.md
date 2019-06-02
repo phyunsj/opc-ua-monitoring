@@ -111,7 +111,7 @@ Only Virtual Pin 3 is writable for this demo.
 <img src="https://github.com/phyunsj/opc-ua-monitoring/blob/master/images/opc-ha-grafana-dashboard.gif" width="700px"/>
 </p>
 
-1. Install `node-red-contrib-influxdb` from "Managae palette"
+1. Install `node-red-contrib-influxdb` from "Manage palette"
 2. Install InfluxDB
 >`$ brew install  influxdb`
 3. Install Grafana
@@ -128,7 +128,7 @@ The following data were added to `temperature` measurement. Use `drop measuremen
 
 Conceptually you can think of a measurement as an SQL table, where the primary index is always time.tags and fields are effectively columns in the table. tags are indexed, and fields are not.
 
-Created multiple regions to visualize the regional data. `east_[2|3|4|5|6]` were also simulated. The following `msg.payload` was sent to `influxdb batch` node.
+Created multiple regions to visualize the regional data. region `east_[2|3|4|5|6]` were also simulated. The following `msg.payload` was sent to `influxdb batch` node.
 
 ```
 return  { payload : [
